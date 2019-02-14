@@ -1,4 +1,5 @@
 <?php
+//https://segmentfault.com/a/1190000010748235#articleHeader3
 //索引数据 pack array & 关联数组 hash array
 $arr1 = array('a' => "one", "b" => "two", 'c' => "three");
 $arr2 = array('b' => "new two", 'c' => "new three");

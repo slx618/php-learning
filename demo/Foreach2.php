@@ -1,5 +1,6 @@
 <?php
-
+//https://segmentfault.com/a/1190000010748235#articleHeader2
+// 引用传递
 $arr = range(1,3);
 foreach($arr as &$v){
     echo $v . '<br>';

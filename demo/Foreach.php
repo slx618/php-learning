@@ -1,4 +1,6 @@
 <?php
+//https://segmentfault.com/a/1190000010748235#articleHeader8
+// reset 顺序
 $arr=[];
 $arr[2] = 2;
 $arr[1]  = 1;

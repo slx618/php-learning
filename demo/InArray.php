@@ -1,4 +1,5 @@
 <?php
+//https://segmentfault.com/a/1190000010748235#articleHeader5
 //http://php.net/manual/zh/types.comparisons.php#types.comparisions-loose
 //松散比较 对着表理解
 $arr = ['a', 'pro' => 'php', 8, true];
