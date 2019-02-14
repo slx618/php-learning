@@ -1,5 +1,6 @@
 <?php
-
+//http://php.net/manual/zh/types.comparisons.php#types.comparisions-loose
+//松散比较 对着表理解
 $arr = ['a', 'pro' => 'php', 8, true];
 var_dump(in_array(2, $arr)); // bool(true)
 var_dump(in_array('b', $arr)); // bool(true)
@@ -24,7 +25,7 @@ switch (strval($name)) {
           echo 'bb';
           break;
 } 
-//http://php.net/manual/zh/types.comparisons.php#types.comparisions-loose
+
 function test($var) { 
      switch (true) { 
           case 'apple' === $var: 
