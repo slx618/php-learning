@@ -3,7 +3,7 @@
 namespace app\controllers;
 
 
-class IndexController
+class SiteController
 {
     public function actionIndex()
     {

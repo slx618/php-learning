@@ -7,5 +7,5 @@
  */
 
 return [
-    'xx'
+    'defaultRoute' => 'site/index'
 ];
