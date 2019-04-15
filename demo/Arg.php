@@ -20,4 +20,4 @@ function myArray(array $arr = null): array {
 //var_dump(myString([23])); //Fatal Error
 
 //类型约束允许 NULL 值
-var_dump(myArray(NULL));
+var_dump(myArray([1]));
