@@ -7,26 +7,38 @@
  * Time: 18:01
  */
 
+/**
+ * Class redisConnection
+ */
 class redisConnection
 {
     private static $_instance;
 
-    private $host = '192.168.41.80';
+    private $host = '172.17.1.222';
 
     private $port = '6379';
 
-    private $pass = 'erp6394';
+    private $pass = '';
 
-    private $database = '11';
+    private $database = '0';
 
 
-
+    /**
+     * @return Redis
+     */
     public function __construct()
     {
-       return self::getInstance();
+        return self::getInstance();
     }
 
 
+    /**
+     * @param $host
+     * @param $port
+     * @param $database
+     * @param $pass
+     * @return Redis
+     */
     public function connect($host, $port, $database, $pass)
     {
         $handle = new Redis();
@@ -36,9 +48,12 @@ class redisConnection
         return $handle;
     }
 
+    /**
+     * @return Redis
+     */
     private function getInstance()
     {
-        if (self::$_instance instanceof self) {
+        if (self::$_instance instanceof Redis) {
             return self::$_instance;
         } else {
             return self::$_instance = $this->connect($this->host, $this->port, $this->database, $this->pass);
@@ -46,9 +61,20 @@ class redisConnection
     }
 
 
-    public function get($key)
+    /**
+     * @param Redis
+     * @param $params
+     * @return mixed
+     */
+    public function __call($funcName, $params)
     {
-        return $this->get($key);
+        try {
+            if (method_exists(self::$_instance, $funcName)) {
+                return call_user_func_array([self::$_instance, $funcName], $params);
+            }
+        } catch (\Exception $e) {
+            var_dump($e->getMessage());
+        }
     }
 
 }

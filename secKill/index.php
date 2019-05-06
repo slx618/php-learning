@@ -7,5 +7,5 @@
  */
 include 'secKillBiz.php';
 
-$mySec = new SecKillBiz();
+$mySec = new SecKillBiz(12223);
 $mySec->pages();

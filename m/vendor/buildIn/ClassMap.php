@@ -10,4 +10,18 @@ namespace app\vendor\buildIn;
 class ClassMap
 {
 
+    private static $_instance;
+
+
+    private function __construct()
+    {
+        //Yii::$app->request;
+
+    }
+
+
+    public function newInstance()
+    {
+
+    }
 }
