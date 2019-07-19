@@ -31,7 +31,7 @@ class Router
             $conNameSpace = CONTROLLERS_PATH . ucfirst($controller) . 'Controller';
             $con = new $conNameSpace;
             $action = 'action' . ucfirst($action);
-            $con->$action();
+            call_user_func_array([$con, $action], null);
         } catch (\Exception $e) {
             var_dump($e->getMessage());
         }

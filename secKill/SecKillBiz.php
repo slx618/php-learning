@@ -32,6 +32,16 @@ class SecKillBiz
         include 'redisConnection.php';
         $rds = new redisConnection();
 
+        for ($i = 0; $i < 1000; $i++) {
+            $rds->lpush('list1', uniqid());
+        }
+        $len = $rds->llen('list1');
+        echo $len;
+        for ($i = $len; $i >= 0; $i--) {
+            echo $rds->lindex('list1', $i) . "\n";
+        }
+
+
         $rds->incr('sss12');
         $rds->set($this->k, 'sss12');
         $rds->setex($this->k, 60, 'sss12');
