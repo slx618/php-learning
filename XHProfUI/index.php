@@ -48,6 +48,11 @@ if (file_exists($path)) {
     <input type='text' style="width: 60%; margin: 10px" name="path" value="<?= $path?>" placeholder="文件路径">
     <input type="submit" value="提交">
 </form>
+<pre>
+    github: https://github.com/tideways/php-xhprof-extension
+    tideways_xhprof_enable(TIDEWAYS_XHPROF_FLAGS_MEMORY | TIDEWAYS_XHPROF_FLAGS_CPU | TIDEWAYS_XHPROF_FLAGS_MEMORY_ALLOC);
+    file_put_contents('./vip_.json', json_encode(tideways_xhprof_disable()));
+</pre>
 <?php if ($content) {?>
     <table class="table table-striped table-bordered table-hover table-condensed">
         <tr>
